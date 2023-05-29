@@ -32,6 +32,6 @@
 <td colspan="2"> <input class = "button" type="submit" name="calcular"></td>
 </form>
 
-<a href="questao2.php"><button>Continue</button></a>
+<a href="questao2.php"><button type="submit" name="calcular" >Continue</button></a>
 </body>
 </html>
