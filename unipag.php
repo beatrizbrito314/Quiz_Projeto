@@ -16,8 +16,7 @@ $perguntas = array ("pergunta 1",
                     "pergunta 3", 
                     "pergunta 4", 
                     "pergunta 5",
-                    "pergunta 6", 
-                    "pergunta 2",
+                    "pergunta 6",
                     "pergunta 7", 
                     "pergunta 8", 
                     "pergunta 9", 
@@ -53,7 +52,7 @@ $alternativas = array(
             }
 
         if($res=="1"){
-        echo ("Correto");
+            echo ("Correto");
         }else{
             echo ("incorreto");}
     }
@@ -98,9 +97,12 @@ $alternativas = array(
         <input type="radio" name="res" value="3"><?php echo($respostas[0][2])?></br>
         <input type="radio" name="res" value="4"><?php echo($respostas[0][3])?></br>  
         
-        <td colspan="2"><a href="#page-2"><button type="submit" name="calcular">Próxima</button></a></td>
+        <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
         </form>
+
+        <td colspan="2"><a href="#page-2"><button>próxima</button></a></td>
     </section>
+
     <section id="page-2" style="background-color: orange">
         <h1>Página 2</h1>
         <?php
@@ -108,16 +110,18 @@ $alternativas = array(
         ?>
         <h1><?php echo($perguntas[1])?></h1>
 
-        <form action="unipag.php" method="post">
+        <form action="unipag.php#page-2" method="post">
 
         <input type="radio" name="res" value="1"><?php echo($respostas[0][0])?></br>
         <input type="radio" name="res" value="2"><?php echo($respostas[0][1])?></br>
         <input type="radio" name="res" value="3"><?php echo($respostas[0][2])?></br>
         <input type="radio" name="res" value="4"><?php echo($respostas[0][3])?></br>  
 
-        <td colspan="2"><a href="#page-3"><button type="submit" name="calcular">Próxima</button></a></td>
+        <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
         </form>
+        <td colspan="2"><a href="#page-3"><button>próxima</button></a></td>
     </section>
+
     <section id="page-3" style="background-color: yellow">
         <h1>Página 3</h1>
         <?php
@@ -125,23 +129,34 @@ $alternativas = array(
         ?>
         <h1><?php echo($perguntas[2])?></h1>
 
-        <form action="unipag.php" method="post">
+        <form action="unipag.php#page-3" method="post">
 
         <input type="radio" name="res" value="1"><?php echo($respostas[2][0])?></br>
         <input type="radio" name="res" value="2"><?php echo($respostas[2][1])?></br>
         <input type="radio" name="res" value="3"><?php echo($respostas[2][2])?></br>
         <input type="radio" name="res" value="4"><?php echo($respostas[2][3])?></br>  
 
-        <td colspan="2"><a href="#page-4"><button type="submit" name="calcular">Próxima</button></a></td>
+        <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
         </form>
+        <td colspan="2"><a href="#page-4"><button>próxima</button></a></td>
     </section>
+
     <section id="page-4" style="background-color: green">
         <h1>Página 4</h1>
             <?php
                 include("arrays.php")
             ?>
             <h1><?php echo($perguntas[3])?></h1>
-            <form action="unipag.php" method="post">
+            <form action="unipag.php#page-4" method="post">
+            
+            <input type="radio" name="res" value="1"><?php echo($respostas[3][0])?></br>
+            <input type="radio" name="res" value="2"><?php echo($respostas[3][1])?></br>
+            <input type="radio" name="res" value="3"><?php echo($respostas[3][2])?></br>
+            <input type="radio" name="res" value="4"><?php echo($respostas[3][3])?></br>  
+
+            <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
+        </form>
+        <td colspan="2"><a href="#page-5"><button>próxima</button></a></td>            
 
     </section>
     <section id="page-5" style="background-color: aquamarine">
@@ -150,7 +165,16 @@ $alternativas = array(
                 include("arrays.php")
             ?>
             <h1><?php echo($perguntas[4])?></h1>
-            <form action="unipag.php" method="post">
+            <form action="unipag.php#page-5" method="post">
+
+                <input type="radio" name="res" value="1"><?php echo($respostas[4][0])?></br>
+                <input type="radio" name="res" value="2"><?php echo($respostas[4][1])?></br>
+                <input type="radio" name="res" value="3"><?php echo($respostas[4][2])?></br>
+                <input type="radio" name="res" value="4"><?php echo($respostas[4][3])?></br> 
+            
+                <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
+            </form>
+            <td colspan="2"><a href="#page-6"><button>próxima</button></a></td>     
 
     </section>
     <section id="page-6" style="background-color: blue">
@@ -159,7 +183,16 @@ $alternativas = array(
                 include("arrays.php")
             ?>
             <h1><?php echo($perguntas[5])?></h1>
-            <form action="unipag.php" method="post">
+            <form action="unipag.php#page-6" method="post">
+
+            <input type="radio" name="res" value="1"><?php echo($respostas[5][0])?></br>
+            <input type="radio" name="res" value="2"><?php echo($respostas[5][1])?></br>
+            <input type="radio" name="res" value="3"><?php echo($respostas[5][2])?></br>
+            <input type="radio" name="res" value="4"><?php echo($respostas[5][3])?></br> 
+
+            <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
+        </form>
+        <td colspan="2"><a href="#page-7"><button>próxima</button></a></td>     
 
     </section>
     <section id="page-7" style="background-color: violet">
@@ -168,7 +201,16 @@ $alternativas = array(
                 include("arrays.php")
             ?>
             <h1><?php echo($perguntas[6])?></h1>
-            <form action="unipag.php" method="post">
+            <form action="unipag.php#page-7" method="post">
+
+            <input type="radio" name="res" value="1"><?php echo($respostas[6][0])?></br>
+            <input type="radio" name="res" value="2"><?php echo($respostas[6][1])?></br>
+            <input type="radio" name="res" value="3"><?php echo($respostas[6][2])?></br>
+            <input type="radio" name="res" value="4"><?php echo($respostas[6][3])?></br>  
+
+            <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
+        </form>
+        <td colspan="2"><a href="#page-8"><button>próxima</button></a></td>     
 
     </section>
     <section id="page-8" style="background-color: purple">
@@ -177,7 +219,16 @@ $alternativas = array(
                 include("arrays.php")
             ?>
             <h1><?php echo($perguntas[7])?></h1>
-            <form action="unipag.php" method="post">
+            <form action="unipag.php#page-8" method="post">
+
+            <input type="radio" name="res" value="1"><?php echo($respostas[7][0])?></br>
+            <input type="radio" name="res" value="2"><?php echo($respostas[7][1])?></br>
+            <input type="radio" name="res" value="3"><?php echo($respostas[7][2])?></br>
+            <input type="radio" name="res" value="4"><?php echo($respostas[7][3])?></br> 
+
+            <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
+        </form>
+        <td colspan="2"><a href="#page-9"><button>próxima</button></a></td>     
 
     </section>
     <section id="page-9" style="background-color: pink">
@@ -186,7 +237,16 @@ $alternativas = array(
                 include("arrays.php")
             ?>
             <h1><?php echo($perguntas[8])?></h1>
-            <form action="unipag.php" method="post">
+            <form action="unipag.php#page-9" method="post">
+
+            <input type="radio" name="res" value="1"><?php echo($respostas[8][0])?></br>
+            <input type="radio" name="res" value="2"><?php echo($respostas[8][1])?></br>
+            <input type="radio" name="res" value="3"><?php echo($respostas[8][2])?></br>
+            <input type="radio" name="res" value="4"><?php echo($respostas[8][3])?></br>  
+
+            <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
+        </form>
+        <td colspan="2"><a href="#page-10"><button>próxima</button></a></td>     
 
     </section>
     <section id="page-10" style="background-color: white">
@@ -195,15 +255,17 @@ $alternativas = array(
                 include("arrays.php")
             ?>
             <h1><?php echo($perguntas[9])?></h1>
-            <form action="unipag.php" method="post">
+            <form action="unipag.php#page-10" method="post">
+                
+            <input type="radio" name="res" value="1"><?php echo($respostas[9][0])?></br>
+            <input type="radio" name="res" value="2"><?php echo($respostas[9][1])?></br>
+            <input type="radio" name="res" value="3"><?php echo($respostas[9][2])?></br>
+            <input type="radio" name="res" value="4"><?php echo($respostas[9][3])?></br>
 
+            <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
+        </form>
+        <td colspan="2"><a href="final.php"><button>Finalizar</button></a></td>     
     </section>
-
-
     
-        
-
-
-
 </body>
 </html>
