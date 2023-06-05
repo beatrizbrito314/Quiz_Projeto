@@ -1,6 +1,6 @@
 <?php
 session_start();
-//tem que mudar essas coisas
+/* Acho que pode apagar essas coisas ↡ ↡ ↡
     if(isset($_POST['Proximo1'])){
         $_SESSION["v1"] = "xx";
         $_SESSION['refeicao'] = $_POST['refeicao'];
@@ -9,6 +9,7 @@ session_start();
         $_SESSION["v2"] = "xx";
         $_SESSION['refeicao1'] = $_POST['refeicao1'];
     }
+*/
 $ponto=0;
 $msg='';
 $res="";
