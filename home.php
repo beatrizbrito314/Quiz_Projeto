@@ -26,6 +26,6 @@ $nome="";
     <td colspan="2"> <input class = "button" type="submit" name="calcular"></td>
 </form>
 
-<a href="unipag.php"><button>Continue</button></a>
+<button><a href="unipag.php">Continue</a></button>
 </body>
 </html>
