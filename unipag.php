@@ -57,7 +57,7 @@ $respostas = array(
         $botao = $_POST["calcular"];
 
         if(isset($_POST["res1"])){
-            $r= resposta( $_POST["res1"], "Quartzo Rosa");
+            $r= resposta( $_POST["res1"], "Diamante Rosa");
             } $msg= " ".$r;
             //pergunta 2
             if(isset($_POST["res2"])){
@@ -69,8 +69,7 @@ $respostas = array(
                 }$msg= " ".$r;
             //pergunta 4
             if(isset($_POST["res4"])){
-                $r= resposta( $_POST["res4"], "É isso, acabou?
-                ");
+                $r= resposta( $_POST["res4"], "É isso, acabou?");
                 }$msg= " ".$r;
             //pergunta 5
             if(isset($_POST["res5"])){
@@ -105,10 +104,10 @@ function resposta($alternativa, $resposta){
         // a função exibirá uma msg em verde caso o name corresponda ao value da resposta correta (definir no isset($_POST)
         if($alternativa==$resposta){
              $ponto= $ponto+10;
-            return "<div  style='background-color:green;'>Parabéns, você ganhou 10 pontos!!! <br>  alternativa correta: ".$resposta."</div >";
+            return "<div  style='background-color:green;'>Parabéns, você ganhou 10 pontos!!! <br>  Alternativa correta: ".$resposta."</div >";
         }else{
             $ponto= 0;
-            return "<div style='background-color:red;'>Você marcou a alternativa incorreta e não marcou pontos. <br> alternativa marcada: ".$alternativa."</div> <br> <div  style='background-color:green;'> alternativa correta: ".$resposta."</div >" ;
+            return "<div style='background-color:red;'> Você marcou a alternativa incorreta e não marcou pontos. <br> Alternativa marcada: ".$alternativa."</div> <br> <div  style='background-color:green;'> Alternativa correta: ".$resposta."</div >" ;
         }
 }
    
