@@ -15,10 +15,10 @@ $res="";
 $r='';
 //$posicao=rand(0,3);
 $perguntas = array ("A gem do Steven e sua mãe Rose Quartz é uma:", 
-                    "A diamante rosa teve:",
+                    "A Diamante Rosa teve:",
                     "A Garnet é uma fusão de:", 
-                    "A música cantada por pérola no episódio senhor Greg se chama:", 
-                    "Durante a série, o steven universo quase morreu (aproximadamente):",
+                    "A música cantada por Pérola no episódio senhor Greg se chama:", 
+                    "Durante a série, o Steven quase morreu (aproximadamente):",
                     "A ordem de entrada das Crystal Gems na rebelião é:",
                     "Qual das Gems a seguir passou 6000 anos presa em um espelho?", 
                     "O Steven tem qual animal como pet?", 
@@ -29,12 +29,12 @@ $respostas = array(
                 //pergunta 1
                 array ("Quartzo Rosa","Diamante Rosa","Turmalina Rosa","Safira Rosa"),
                 //pergunta 2
-                array ("2 pérolas e uma espinela(além das gens da colônia e outros serviçais)",
-                "1 pérola (além das gens da colônia e outros serviçais)",
-                "2 pérolas e uma ametista (além das gens da colônia e outros serviçais)",
+                array ("2 Pérolas e uma Espinela(além das gems da colônia e outros serviçais)",
+                "1 Pérola (além das gems da colônia e outros serviçais)",
+                "2 Pérolas e uma Ametista (além das gems da colônia e outros serviçais)",
                 "nenhuma das alternativas acima"),
                 //pergunta 3
-                array ("uma rubi e uma pérola","uma rubi e uma ametista","duas safiras","uma rubi e uma safira"),
+                array ("uma Rubi e uma Pérola","uma Rubi e uma Ametista","duas Safiras","uma Rubi e uma Safira"),
                 //pergunta 4
                 array ("É isso, acabou?","Se por ela fizer","Aqui foi um pensamento ","Mais forte que você"),
                 //pergunta 5
@@ -61,11 +61,11 @@ $respostas = array(
             } $msg= " ".$r;
             //pergunta 2
             if(isset($_POST["res2"])){
-                $r= resposta( $_POST["res2"], "2 pérolas e uma espinela(além das gens da colônia e outros serviçais)");
+                $r= resposta( $_POST["res2"], "2 Pérolas e uma Espinela(além das gems da colônia e outros serviçais)");
                 }$msg= " ".$r;
             //pergunta 3
             if(isset($_POST["res3"])){
-                $r= resposta( $_POST["res3"], "uma rubi e uma safira");
+                $r= resposta( $_POST["res3"], "uma Rubi e uma Safira");
                 }$msg= " ".$r;
             //pergunta 4
             if(isset($_POST["res4"])){
@@ -108,7 +108,7 @@ function resposta($alternativa, $resposta){
             return "<div  style='background-color:green;'>Parabéns, você ganhou 10 pontos!!! <br>  alternativa correta: ".$resposta."</div >";
         }else{
             $ponto= 0;
-            return "<div style='background-color:red;'>Você marcou a alternativa incorreta e não macou pontos. <br> alternativa marcada: ".$alternativa."</div> <br> <div  style='background-color:green;'> alternativa correta: ".$resposta."</div >" ;
+            return "<div style='background-color:red;'>Você marcou a alternativa incorreta e não marcou pontos. <br> alternativa marcada: ".$alternativa."</div> <br> <div  style='background-color:green;'> alternativa correta: ".$resposta."</div >" ;
         }
 }
    
@@ -162,7 +162,7 @@ function resposta($alternativa, $resposta){
     <section id="res1" style="background-color: red">
     <h1><?php echo($perguntas[0])?></h1>
         <?php echo $msg;?>
-        <a href="unipag.php#page-2"> contuniar</a>
+        <a href="unipag.php#page-2"><button>continuar</button></a>
     </section>
 
 
@@ -174,9 +174,9 @@ function resposta($alternativa, $resposta){
         <br>
         <h1><?php echo($perguntas[1])?></h1>
     <form action="unipag.php#res2" method="post">
-        <input type="radio" name="res2" value="2 pérolas e uma espinela(além das gens da colônia e outros serviçais)" required><?php echo($respostas[1][0])?></br>
-        <input type="radio" name="res2" value="1 pérola (além das gens da colônia e outros serviçais)" required><?php echo($respostas[1][1])?></br>
-        <input type="radio" name="res2" value="2 pérolas e uma ametista (além das gens da colônia e outros serviçais)" required><?php echo($respostas[1][2])?></br>
+        <input type="radio" name="res2" value="2 Pérolas e uma Espinela(além das gems da colônia e outros serviçais)" required><?php echo($respostas[1][0])?></br>
+        <input type="radio" name="res2" value="1 Pérola (além das gems da colônia e outros serviçais)" required><?php echo($respostas[1][1])?></br>
+        <input type="radio" name="res2" value="2 Pérolas e uma Ametista (além das gems da colônia e outros serviçais)" required><?php echo($respostas[1][2])?></br>
         <input type="radio" name="res2" value="nenhuma das alternativas acima" required><?php echo($respostas[1][3])?></br>  
         <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
     </form>
@@ -186,7 +186,7 @@ function resposta($alternativa, $resposta){
     <section id="res2" style="background-color: red">
     <h1><?php echo($perguntas[1])?></h1>
         <?php echo $msg;?>
-        <a href="unipag.php#page-3"> continuar</a>
+        <a href="unipag.php#page-3"><button>continuar</button></a>
     </section>
 
 
@@ -198,10 +198,10 @@ function resposta($alternativa, $resposta){
        <br>
         <h1><?php echo($perguntas[2])?></h1>
     <form action="unipag.php#res3" method="post">
-        <input type="radio" name="res3" value="Uma rubi e uma pérola" required><?php echo($respostas[2][0])?></br>
-        <input type="radio" name="res3" value="Uma rubi e uma ametista" required><?php echo($respostas[2][1])?></br>
-        <input type="radio" name="res3" value="Duas safiras" required><?php echo($respostas[2][2])?></br>
-        <input type="radio" name="res3" value="Uma rubi e uma safira" required><?php echo($respostas[2][3])?></br>  
+        <input type="radio" name="res3" value="Uma Rubi e uma Pérola" required><?php echo($respostas[2][0])?></br>
+        <input type="radio" name="res3" value="Uma Rubi e uma Ametista" required><?php echo($respostas[2][1])?></br>
+        <input type="radio" name="res3" value="Duas Safiras" required><?php echo($respostas[2][2])?></br>
+        <input type="radio" name="res3" value="Uma Rubi e uma Safira" required><?php echo($respostas[2][3])?></br>  
         <td colspan="2"><button type="submit" name="calcular">Verificar</button></td>
     </form>
 </section>
@@ -210,7 +210,7 @@ function resposta($alternativa, $resposta){
     <section id="res3" style="background-color: red">
     <h1><?php echo($perguntas[2])?></h1>
         <?php echo $msg;?>
-        <a href="unipag.php#page-4"> continuar</a>
+        <a href="unipag.php#page-4"><button>continuar</button></a>
     </section>
 
 
@@ -234,7 +234,7 @@ function resposta($alternativa, $resposta){
 <section id="res4" style="background-color: red">
     <h1><?php echo($perguntas[3])?></h1>
         <?php echo $msg;?>
-        <a href="unipag.php#page-5"> continuar</a>
+        <a href="unipag.php#page-5"><button>continuar</button></a>
     </section>
 
 
@@ -258,7 +258,7 @@ function resposta($alternativa, $resposta){
     <section id="res5" style="background-color: red">
      <h1><?php echo($perguntas[4])?></h1>
         <?php echo $msg;?>
-        <a href="unipag.php#page-6"> continuar</a>
+        <a href="unipag.php#page-6"><button>continuar</button></a>
     </section>
 
 
@@ -282,7 +282,7 @@ function resposta($alternativa, $resposta){
 <section id="res6" style="background-color: red">
      <h1><?php echo($perguntas[5])?></h1>
         <?php echo $msg;?>
-        <a href="unipag.php#page-7"> continuar</a>
+        <a href="unipag.php#page-7"><button>continuar</button></a>
     </section>
 
 
@@ -306,7 +306,7 @@ function resposta($alternativa, $resposta){
     <section id="res7" style="background-color: red">
      <h1><?php echo($perguntas[6])?></h1>
         <?php echo $msg;?>
-        <a href="unipag.php#page-8"> continuar</a>
+        <a href="unipag.php#page-8"><button>continuar</button></a>
     </section>
 
 
@@ -330,7 +330,7 @@ function resposta($alternativa, $resposta){
     <section id="res8" style="background-color: red">
      <h1><?php echo($perguntas[7])?></h1>
         <?php echo $msg;?>
-        <a href="unipag.php#page-9"> continuar</a>
+        <a href="unipag.php#page-9"><button>continuar</button></a>
     </section>
 
 
@@ -354,7 +354,7 @@ function resposta($alternativa, $resposta){
     <section id="res9" style="background-color: red">
      <h1><?php echo($perguntas[8])?></h1>
         <?php echo $msg;?>
-        <a href="unipag.php#page-10"> continuar</a>
+        <a href="unipag.php#page-10"><button>continuar</button></a>
     </section>
 
 
@@ -380,7 +380,7 @@ function resposta($alternativa, $resposta){
     <section id="res10" style="background-color: red">
         <h1><?php echo($perguntas[9])?></h1>
         <?php echo $msg;?>
-        <a href="final.php">Finalizar</a>
+        <a href="final.php"><button>Finalizar O Quiz</button></a>
     </section>
 
 </body>
