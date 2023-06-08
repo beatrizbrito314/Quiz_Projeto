@@ -1,18 +1,21 @@
 <?php
 session_start();
-$ponto=0;
+
 $msg='';
 $res="";
 $i='';
+$ponto=0;
 $nq = 0;
+$pos='';
 
 
 if(isset($_POST["nq"])){
-    $nq = $_POST["nq"]+1;
+    $nq = $_POST["nq"];
     }
-    
 
-    
+    if(isset($_POST["ponto"])){
+
+        }
 //$posicao=rand(0,3);
 $perguntas = array ("A gem do Steven e sua mãe Rose Quartz é uma:",
                     "A Diamante Rosa teve:",
@@ -25,7 +28,7 @@ $perguntas = array ("A gem do Steven e sua mãe Rose Quartz é uma:",
                     "A vilã do filme de Steven Universe é a:",
                     "Que cores correspondem a autoridade diamante?"
                 );
-$respostas = array(
+$alt = array(
                 //pergunta 1
                 array ("Quartzo Rosa","Diamante Rosa","Turmalina Rosa","Safira Rosa"),
                 //pergunta 2
@@ -53,34 +56,59 @@ $respostas = array(
                 ","Branco, Amarelo, Azul e Rosa","Branco, Magenta, Amarelo e Ciano","Preto, Rosa, Púrpura e Laranja")
                 );
 
+                function validar($alternativa, $posicaores, $i){
+                   global $ponto;
+                    if($alternativa==$posicaores){
+                        $ponto = $_POST["ponto"]+1;
+                        return "Parabéns!!! Você acertou a questão anterior e ganhou +1 ponto.";
+                    }else{
+                        $ponto= $_POST["ponto"];
+                        return "Que pena, você errou e não marcou pontos.";}
+                    }
+$resp = array(2, 1, 4, 1, 3, 4, 3, 1, 1, 2);
+
+
 
     if(isset($_POST["calcular"])){
         $botao = $_POST["calcular"];
+
+
+if(isset($_POST["alt"])){
+    $res= validar($_POST["alt"], $resp[$nq], $_POST["ponto"]);
+    $nq = $_POST["nq"]+1;
+    }$msg= " ".$res;
         }
        
 function questoes($i){
-    global $perguntas, $respostas, $_SESSION, $nq;
+    global $perguntas, $alt, $_SESSION, $nq, $ponto, $msg;
     if( $nq>9){
         $i=0;
         $nq=0;
-  
     }
-
 ?>
     <section id="1">
     <form action="unipag.php" method="post">
-        <h1><?php echo ($perguntas[$i])?></h1>
-        <input type="text" name="nq" value="<?php echo $nq; ?>">
+    <?php echo $msg?>
         <br>
-        <input type="radio" name="a1" value="Quartzo Rosa " required><?php echo($respostas[$i][0])?></br>
-        <input type="radio" name="a1" value="Diamante Rosa" required><?php echo($respostas[$i][1])?></br>
-        <input type="radio" name="a1" value="Turmalina Rosa" required><?php echo($respostas[$i][2])?></br>
-        <input type="radio" name="a1" value="Safira Rosa" required><?php echo($respostas[$i][3])?></br>
+        <br>
+        <label for="pontos">Total de pontos:  </label><input type="text" name="ponto" value="<?php echo $ponto; ?>">
+        <br>
+        <br>
+        <br>
+        <h1><?php echo ($perguntas[$i])?></h1>
+        <label for="pontos">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>">
+        <br>
+        <input type="radio" name="alt" value="1" required><?php echo($alt[$i][0])?></br>
+        <input type="radio" name="alt" value="2" required><?php echo($alt[$i][1])?></br>
+        <input type="radio" name="alt" value="3" required><?php echo($alt[$i][2])?></br>
+        <input type="radio" name="alt" value="4" required><?php echo($alt[$i][3])?></br>
         <input type="submit" name= "calcular" value="calcular">
     </form>
+    <?php if($i==9){ 
+       echo '<a href="final.php"><button>Finalizar</button></a>';?>
 </section>
 <?php
-}
+}}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,8 +121,13 @@ function questoes($i){
 </head>
 <body>
 
+<?php questoes($nq)?>
 
-<?php questoes($nq) ?>
+
+
+
+
+
 
 </body>
 </html>
