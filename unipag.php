@@ -6,7 +6,6 @@ $res="";
 $i='';
 $ponto=0;
 $nq = 0;
-$pos='';
 
 
 if(isset($_POST["nq"])){
@@ -86,31 +85,44 @@ function questoes($i){
         $nq=0;
     }
 ?>
-<div class="parent">
-    <section  id="1">
-    <form action="unipag.php" method="post">
+    
+    <div class="bg">
+        <form class="parent" action="unipag.php" method="post">
     <?php echo $msg?>
-        <label for="pontos">Total de pontos:  </label><input type="text" name="ponto" value="<?php echo $ponto; ?>">
-        <div class="alternatives"> 
-        <div class="radio-input">
-        <h1><?php echo ($perguntas[$i])?></h1>
-        <label for="pontos">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>">
-        <br>
-        <input type="radio" name="alt" class="input" id="a1" value="1" required><?php echo($alt[$i][0])?></br>
-        <input type="radio" name="alt" class="input" id="a2" value="2" required><?php echo($alt[$i][1])?></br>
-        <input type="radio" name="alt" class="input" id="a3" value="3" required><?php echo($alt[$i][2])?></br>
-        <input type="radio" name="alt" class="input" id="a4" value="4" required><?php echo($alt[$i][3])?></br>
-        <input type="submit" name= "calcular" value="calcular">
-    </form>
-</div>
-</div>
+
+            <div class="questionbody">
+                <p><?php echo ($perguntas[$i])?></p>     
+            </div>
+            <div class="alternatives"> 
+            <div class="radio-input">
+                 <label for="a1">
+                    <input type="radio" class="input" name="alt" value="1" required><?php echo($alt[$i][0])?> <br>
+                </label>
+                 <label for="a2">
+                    <input type="radio" class="input" name="alt" value="2" required><?php echo($alt[$i][1])?><br>
+                 </label>
+                 <label for="a3">
+                    <input type="radio" class="input" name="alt" value="3" required><?php echo($alt[$i][2])?><br>
+                </label>
+                <label for="a4"> 
+                    <input type="radio" class="input" name="alt" value="4" required><?php echo($alt[$i][3])?><br>
+                </label>
+                    <input type="submit" name= "calcular" value="calcular"class="goaheadbutton"><button class="learn-more">Continuar</button>
+            </div>
+            </div>
+            <label for="pontos">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>" onlyread>
+            <label for="pontos">Total de pontos:  </label><input type="text" name="ponto" value="<?php echo $ponto; ?>" onlyread>
+        </form>
+    </div>
+<div class="goaheadbutton"><button class="learn-more">Continuar</button>
+ </div>
     <?php if($i==9){ 
        echo '<a href="final.php"><button>Finalizar</button></a>';?>
-</section>
 </div>
 <?php
 }}
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -120,8 +132,6 @@ function questoes($i){
     <link rel="stylesheet" href="stylesheet.css">
     <script src="Script.js"></script> 
     <title>Steven Universo Quiz</title>
-   
-    <title>Document</title>
 </head>
 <body>
 <div id="page-container">
@@ -139,19 +149,11 @@ function questoes($i){
 
 <header>
 <div class="parent">
-  <div class="title">
-      <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
-    </div>
+
 </header>
 <div id="content-wrap">
 <main>
-<?php questoes($nq)?>
-</div>
 </main>
-</div>
-
-
-
 
 <footer id="footer">
 
@@ -168,8 +170,16 @@ function questoes($i){
     <div class="Info2"> Professor: Éberton Marinho </div>
     <div class="Info3"> Unidade 1 </div>
  </div>
-</div>
-</footer>
+</div></footer>
+
+
+<?php questoes($nq)?>
+
+
+
+
+
+
 
 </body>
 </html>

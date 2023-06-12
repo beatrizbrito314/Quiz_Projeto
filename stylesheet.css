@@ -25,11 +25,12 @@ label{
   text-align: middle;
   position: relative;
 }
+
 .parent {
 display: grid;
 grid-template-columns: repeat(10, 1fr);
 grid-template-rows: repeat(10, 1fr);
-grid-column-gap: 0px;
+grid-column-gap: 5px;
 grid-row-gap: 4px;
 }
 
@@ -49,6 +50,7 @@ grid-row-gap: 4px;
   border-radius: 20px;
   height: 100%;
   grid-area: 10 / 2 / 11 / 10; }*/
+
 .questionbody { 
   font-family: 'Fredoka', sans-serif;
   text-transform: uppercase;
@@ -59,14 +61,16 @@ grid-row-gap: 4px;
   height: 100%;
   weight: 100%;
   grid-area:  2/ 2 / 4 / 10; }
+
 .alternatives { 
   background-color: #FF5CAD;
   border-radius: 20px;
   height: 100%;
-  weight: 80%;
-  pading: 20px;
+  weight: 100%;
+  pading: 10px;
   vertical-align: middle;
   grid-area: 4 / 3 / 9 / 9; }
+
 .gobackbutton { 
   grid-area: 9 / 3 / 10 / 6; }
 .goaheadbutton { 
@@ -276,4 +280,11 @@ button.learn-more:active::before {
 .input:checked ~ .input,
 .input:checked ~ .input:active {
   background-position: 0 -24px;
+}
+.cor{
+  background-color: red;
+}
+.perguntas{
+  background-color: blue;
+
 }
