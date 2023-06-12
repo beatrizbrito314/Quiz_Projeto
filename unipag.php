@@ -86,48 +86,90 @@ function questoes($i){
         $nq=0;
     }
 ?>
-    <section id="1">
+<div class="parent">
+    <section  id="1">
     <form action="unipag.php" method="post">
     <?php echo $msg?>
-        <br>
-        <br>
         <label for="pontos">Total de pontos:  </label><input type="text" name="ponto" value="<?php echo $ponto; ?>">
-        <br>
-        <br>
-        <br>
+        <div class="alternatives"> 
+        <div class="radio-input">
         <h1><?php echo ($perguntas[$i])?></h1>
         <label for="pontos">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>">
         <br>
-        <input type="radio" name="alt" value="1" required><?php echo($alt[$i][0])?></br>
-        <input type="radio" name="alt" value="2" required><?php echo($alt[$i][1])?></br>
-        <input type="radio" name="alt" value="3" required><?php echo($alt[$i][2])?></br>
-        <input type="radio" name="alt" value="4" required><?php echo($alt[$i][3])?></br>
+        <input type="radio" name="alt" class="input" id="a1" value="1" required><?php echo($alt[$i][0])?></br>
+        <input type="radio" name="alt" class="input" id="a2" value="2" required><?php echo($alt[$i][1])?></br>
+        <input type="radio" name="alt" class="input" id="a3" value="3" required><?php echo($alt[$i][2])?></br>
+        <input type="radio" name="alt" class="input" id="a4" value="4" required><?php echo($alt[$i][3])?></br>
         <input type="submit" name= "calcular" value="calcular">
     </form>
+</div>
+</div>
     <?php if($i==9){ 
        echo '<a href="final.php"><button>Finalizar</button></a>';?>
 </section>
+</div>
 <?php
 }}
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="Script.js"></script> 
+    <title>Steven Universo Quiz</title>
    
     <title>Document</title>
 </head>
 <body>
+<div id="page-container">
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+          <span class="dot"></span>
+          <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+ </div>
+      </div>
+  </div>
+<div id="page">
 
+<header>
+<div class="parent">
+  <div class="title">
+      <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
+    </div>
+</header>
+<div id="content-wrap">
+<main>
 <?php questoes($nq)?>
+</div>
+</main>
+</div>
 
 
 
 
+<footer id="footer">
 
+<div class="ftgrid"> 
 
+ <div class="groupcontent">
+  Desenvolvedoras: 
+    <div class="Name1">      Emilly Beatriz Andrade Brito </div>
+    <div class="Name2"> Francilene F. de Oliveira </div>
+    <div class="Name3"> Letícia Matias Rosendo  </div>
+ </div>
+ <div class="infocontent">
+  <div class="Info1"> Trabalho para a disciplina de Programação para a internet </div>
+    <div class="Info2"> Professor: Éberton Marinho </div>
+    <div class="Info3"> Unidade 1 </div>
+ </div>
+</div>
+</footer>
 
 </body>
 </html>
