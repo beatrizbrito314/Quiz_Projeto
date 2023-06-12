@@ -60,10 +60,10 @@ $alt = array(
                    global $ponto;
                     if($alternativa==$posicaores){
                         $ponto = $_POST["ponto"]+1;
-                        return "Parabéns!!! Você acertou a questão anterior e ganhou +1 ponto.";
+                        return "Parabéns!!! Você acertou a questão anterior e ganhou +1 ponto. <br>";
                     }else{
                         $ponto= $_POST["ponto"];
-                        return "Que pena, você errou e não marcou pontos.";}
+                        return "Que pena, você errou e não marcou pontos. <br>";}
                     }
 $resp = array(2, 1, 4, 1, 3, 4, 3, 1, 1, 2);
 
@@ -89,12 +89,12 @@ function questoes($i){
 <div class="parent">
     <section  id="1">
     <form action="unipag.php" method="post">
-    <?php echo $msg?>
-        <label for="pontos">Total de pontos:  </label><input type="text" name="ponto" value="<?php echo $ponto; ?>">
+    <p style="background-color: pink;"><?php echo $msg?></p>
+        <label for="pontos">Total de pontos:  </label><input   type="text" name="ponto" value="<?php echo $ponto; ?>" readonly >
         <div class="alternatives"> 
         <div class="radio-input">
         <h1><?php echo ($perguntas[$i])?></h1>
-        <label for="pontos">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>">
+        <label for="pontos">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>" readonly >
         <br>
         <input type="radio" name="alt" class="input" id="a1" value="1" required><?php echo($alt[$i][0])?></br>
         <input type="radio" name="alt" class="input" id="a2" value="2" required><?php echo($alt[$i][1])?></br>
@@ -117,8 +117,8 @@ function questoes($i){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
-    <script src="Script.js"></script> 
+   <!-- <link rel="stylesheet" href="stylesheet.css">
+    <script src="Script.js"></script> -->
     <title>Steven Universo Quiz</title>
    
     <title>Document</title>
