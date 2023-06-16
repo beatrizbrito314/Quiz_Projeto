@@ -1,5 +1,5 @@
 <?php
-  session_start(); # Deve ser a primeira linha do arquivo
+  session_start(); # armazenar o nome no session
 $nome="";
     if(isset($_POST["nome"])){
         $nome = $_POST["nome"];
@@ -11,11 +11,11 @@ $nome="";
 
   $confirmacao=false;
 
-  
+  //basicamente a msm logica do botao de responder/proximo da pag principal
   if(isset($_POST["confirmar"])){
     $confirmacao=true;}
 ?>
-
+<!--pagina onde eu coloquei uma breve descricao do funcionnamento do quiz-->
 <a href="instrucoes.PHP"><button>INSTRUÇÕES</button></a>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -57,7 +57,10 @@ $nome="";
 
   
   </div>
-  <?php if(!$confirmacao){
+  <?php 
+        //logica dos botoes dnv
+  
+  if(!$confirmacao){
     echo '<input placeholder="Escolha seu melhor apelido!" class="form-input" type="text" name="nome">';
         echo ' <button class="form-button" type="submit" name="confirmar">Confirmar</button>'; } ?>
 

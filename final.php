@@ -1,10 +1,12 @@
 <?php
+//sessão p chamar os valores de nome e pontos 
 session_start();
 $quant_acerto=' ';
 
+//como cada ponto vale 5 entao a quantidade de acertos é a quantidade de pontos dividida p 5
 $quant_acerto= ($_SESSION['ponto'])/5;
 
-$por_acerto= ($quant_acerto*100)/10;
+$por_acerto= ($quant_acerto*100)/10; //porcentagem de acertos
 
 $gem='';
 ?>
@@ -18,7 +20,9 @@ $gem='';
     <title>Document</title>
 </head>
 <body>
-    <h1>Parabéns, <?php echo $_SESSION['nome'] ?> !!! </h1>
+
+<!--esse session é para exibir o nome do jogador -->
+    <h1>Parabéns, <?php  echo $_SESSION['nome'] ?> !!! </h1>
     <h2>Você finalizou o quiz com um total de <?php echo $quant_acerto ?> de 10 acertos.</h2>
 
 <h4>Seu total de biscoitos, aproveite:</h4>
@@ -29,7 +33,7 @@ $gem='';
 <?php echo $por_acerto."%"; ?>
 
 <h2></h2>
-
+<!--p saber qual gem o usuario recebe-rá-->
 <?php if($quant_acerto>=1 && $quant_acerto<=2 ){
     $gem="Parabéns, você teria os poderes de uma Agata Azul!";
     
