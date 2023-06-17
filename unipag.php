@@ -66,10 +66,10 @@ $alt = array(
                    global $ponto;
                     if($alternativa==$posicaores){
                         $ponto = $_POST["ponto"]+5;
-                        return "Parabéns!!! Você acertou a questão anterior e ganhou +1 ponto. <br>";
+                        return "Parabéns!!! Você acertou a questão e ganhou 5 biscoitos gatinhos. <br>";
                     }else{
                         $ponto= $_POST["ponto"];
-                        return "Que pena, você errou e não marcou pontos. <br>";}
+                        return "Que pena, você errou e não ganhou biscoitos. <br>";}
                     }
 //array da posicao da  resposta de cada pergunta no array alt
 $resp = array(2, 1, 4, 1, 3, 4, 3, 1, 1, 2);
@@ -136,7 +136,10 @@ function questoes($i){
 
 <!--quando o usuario responde a ultima quetao, vai exirtir um botao para finalizar o quiz (esse botao leva para a pag final)-->
     <?php if($i==9){
-       echo '<a href="final.php"><button>Finalizar</button></a>';?>
+ if($respondido){
+       echo '<a href="final.php"><button>Finalizar</button></a>';}
+   
+        ?>
 
 
 </section>
