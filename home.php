@@ -54,22 +54,17 @@ $nome="";
         <form class="colorful-form" action="home.php" method="post">
           <div class="form-group">
             <label class="form-label" for="name">Nome:</label>
-                <input required="" placeholder="Escolha seu melhor apelido!" class="form-input" type="text">
-                 <button class="form-button" type="submit"><a href="unipag.php">começar</button></a>
-                <!--
+                
               <?php 
         //logica dos botoes dnv
-  
                 if(!$confirmacao){
                   echo '<input placeholder="Escolha seu melhor apelido!"  class="form-input" type="text" name="nome">';
                   echo ' <button class="form-button" type="submit" name="confirmar">Confirmar</button>'; } ?>
-
 
                 <?php if($confirmacao){
                   echo '<input placeholder="Seu nome foi registrado" class="form-input" type="text" name="nome" disabled>';
                   echo '<button class="form-button" name="proximo"><a href="unipag.php">começar</button></a>';}
               ?>
- -->
               </form>
           </div>
       </div>
