@@ -8,7 +8,7 @@
    <link rel="stylesheet" href="stylesheet.css">
     <script src="Script.js"></script>
 <script> 
-        setInterval(function(){location.reload(true);}, 1000);
+        setInterval(function(){location.reload(true);}, 10000);
     </script>
     
     <title>Steven Universo Quiz</title>
@@ -146,16 +146,15 @@ function questoes($i){
     }
 ?>
 <div class="grid2">
+    <div class="bg2"></div>
     <section  id="1">
     <form action="unipag.php" method="post" class="bg" class="bg">
     <p><?php echo $msg?></p>
-        
+        <label for="pontos" class="totalp">Total de pontos:  </label><input   type="text" name="ponto" value="<?php echo $ponto; ?>" readonly >
+        <label for="pontos" class="perga">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>" readonly ></label>
         <div class="questionbody"><?php echo ($perguntas[$i])?></div>
         <div class="alternatives">
         <div class="radio-input">
-<label for="pontos" class="totalp">Total de pontos:  </label><input   type="text" name="ponto" value="<?php echo $ponto; ?>" readonly >
-        <label for="pontos" class="perga">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>" readonly ></label>
-        <br>
         <input type="radio" name="alt" class="input" id="a1" value="1" ><?php echo($alt[$i][0])?></br>
         <input type="radio" name="alt" class="input" id="a2" value="2" ><?php echo($alt[$i][1])?></br>
         <input type="radio" name="alt" class="input" id="a3" value="3" ><?php echo($alt[$i][2])?></br>
@@ -204,6 +203,7 @@ function questoes($i){
 
 
 
+<div id="page">
 
 <footer id="footer">
 
@@ -224,7 +224,7 @@ function questoes($i){
 </footer>
 </div>
 </div>
-
+</div>
 </body>
 </html>
 
