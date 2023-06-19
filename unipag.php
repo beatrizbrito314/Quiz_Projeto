@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="stylesheet.css">
     <script src="Script.js"></script>
-<script> 
-        setInterval(function(){location.reload(true);}, 10000);
-    </script>
     
     <title>Steven Universo Quiz</title>
 </head>
@@ -180,7 +177,6 @@ function questoes($i){
     <?php if($i==9){
  if($respondido){
        echo '<a href="final.php"><button>Finalizar</button></a>';}
-   
         ?>
 
 
