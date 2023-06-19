@@ -51,11 +51,11 @@ $nome="";
   <div class="box">
     <div class="boxgrid">
       <div class="textbox">
-        <form class="colorful-form" action="home.php" method="post">
-          <div class="form-group">
+         <div class="form-group">
+        <form class="colorful-form" action="unipag.php" method="post">
             <label class="form-label" for="name">Nome:</label>
                 
-              <?php 
+            <!--  <?php 
         //logica dos botoes dnv
                 if(!$confirmacao){
                   echo '<input placeholder="Escolha seu melhor apelido!"  class="form-input" type="text" name="nome">';
@@ -64,7 +64,7 @@ $nome="";
                 <?php if($confirmacao){
                   echo '<input placeholder="Seu nome foi registrado" class="form-input" type="text" name="nome" disabled>';
                   echo '<button class="form-button" name="proximo"><a href="unipag.php">começar</button></a>';}
-              ?>
+              ?> -->
               </form>
           </div>
       </div>
