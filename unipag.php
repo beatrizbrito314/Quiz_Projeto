@@ -15,7 +15,6 @@
 </head>
 
 <body>
-<div id="page">
     <div class="parent">
 
     <div id="js-preloader" class="js-preloader">
@@ -150,7 +149,8 @@ function questoes($i){
     <section  id="1">
     <form action="unipag.php" method="post" class="bg" class="bg">
     <p><?php echo $msg?></p>
-        <label for="pontos" class="totalp">Total de pontos:  </label><input   type="text" name="ponto" value="<?php echo $ponto; ?>" readonly >
+        <label for="pontos" class="totalp">
+            <?php echo "Jogador: " .$_SESSION['nome']; ?> <br>Total de pontos:  </label><input   type="text" name="ponto" value="<?php echo $ponto; ?>" readonly >
         <label for="pontos" class="perga">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>" readonly ></label>
         <div class="questionbody"><?php echo ($perguntas[$i])?></div>
         <div class="alternatives">
@@ -191,14 +191,13 @@ function questoes($i){
 //a funcao termina aq
 ?>
 <!--exibindo nome do jogador e chamando a função de exibição-->
-<?php echo "Jogador: " .$_SESSION['nome']; ?>
 <?php questoes($nq)?>
 
 </main>
-
+<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/1280px-HD_transparent_picture.png">
 
 <footer id="pageFoot">
-
 <div class="ftgrid"> 
 
  <div class="groupcontent">
@@ -215,8 +214,6 @@ function questoes($i){
 </div>
 </div>
 </footer>
-</div>
-</div>
 </div>
 </body>
 </html>

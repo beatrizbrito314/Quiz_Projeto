@@ -26,14 +26,14 @@ $gemgif='';
 
 
 <div class="parent">
-    <header>
+    <header id="pageHead">
 
   <div class="title">
       <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
   </div>
 </div>
 </header>
-    <main>
+    <main id="pageMain">
     <div class="grid2">
 <!--esse session é para exibir o nome do jogador -->
     <div class="container1"> <h1>Parabéns, <?php  echo $_SESSION['nome'] ?> !!! </h1>
@@ -117,8 +117,11 @@ if($quant_acerto==10){
 <br>
 <a href="home.php"><button>JOGAR NOVAMENTE</button></a>
 </main>
-<footer id="footer">
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/HD_transparent_picture.png/1280px-HD_transparent_picture.png">
+
+
+<footer id="pageFoot">
 <div class="ftgrid"> 
 
  <div class="groupcontent">
@@ -132,6 +135,7 @@ if($quant_acerto==10){
     <div class="Info2"> Professor: Éberton Marinho </div>
     <div class="Info3"> Unidade 1 </div>
  </div>
+</div>
 </div>
 </footer>
 </div>
