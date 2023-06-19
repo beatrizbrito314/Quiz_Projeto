@@ -38,9 +38,9 @@ $nome="";
       </div>
   </div>
 <div id="page">
-
-<header>
 <div class="parent">
+<header>
+
   <div class="title">
       <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
   </div>
@@ -51,10 +51,10 @@ $nome="";
   <div class="box">
     <div class="boxgrid">
       <div class="textbox">
-        <form class="colorful-form" action="home.php" method="post">
-          <div class="form-group">
+        <div class="form-group">
+        <form class="colorful-form" action="unipag.php" method="post">
             <label class="form-label" for="name">Nome:</label>
-                <input required="" placeholder="Escolha seu melhor apelido!" class="form-input" type="text">
+                <input required="" placeholder="Escolha seu melhor apelido!" class="form-input" type="text" name="nome">
                  <button class="form-button" type="submit"><a href="unipag.php">começar</button></a>
                 <!--
               <?php 
@@ -127,3 +127,4 @@ $nome="";
 </div>
 </div>
    </body>
+</html>
