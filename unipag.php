@@ -1,21 +1,27 @@
 <?php
 session_start();
 
+
+
 $msg='';
 $res="";
 $i='';
 $ponto=0;
 $nq = 0;
+$pos='';
+$respondido=false;
 
 
 if(isset($_POST["nq"])){
     $nq = $_POST["nq"];
     }
 
+
     if(isset($_POST["ponto"])){
+       
 
         }
-//$posicao=rand(0,3);
+//arrays onde as perguntas e alternativas estão armazenadas
 $perguntas = array ("A gem do Steven e sua mãe Rose Quartz é uma:",
                     "A Diamante Rosa teve:",
                     "A Garnet é uma fusão de:",
@@ -55,83 +61,104 @@ $alt = array(
                 ","Branco, Amarelo, Azul e Rosa","Branco, Magenta, Amarelo e Ciano","Preto, Rosa, Púrpura e Laranja")
                 );
 
+//funcao de validacao
                 function validar($alternativa, $posicaores, $i){
                    global $ponto;
                     if($alternativa==$posicaores){
-                        $ponto = $_POST["ponto"]+1;
-                        return "Parabéns!!! Você acertou a questão anterior e ganhou +1 ponto.";
+                        $ponto = $_POST["ponto"]+5;
+                        return "Parabéns!!! Você acertou a questão e ganhou 5 biscoitos gatinhos. <br>";
                     }else{
                         $ponto= $_POST["ponto"];
-                        return "Que pena, você errou e não marcou pontos.";}
+                        return "Que pena, você errou e não ganhou biscoitos. <br>";}
                     }
+//array da posicao da  resposta de cada pergunta no array alt
 $resp = array(2, 1, 4, 1, 3, 4, 3, 1, 1, 2);
 
+//passsa para a proxima pergunta
+if(isset($_POST["proximo"])){
+$nq = $_POST["nq"]+1;
+$ponto=$_POST["ponto"];
+}
 
 
-    if(isset($_POST["calcular"])){
-        $botao = $_POST["calcular"];
 
+//botao de resposta
+    if(isset($_POST["responder"])){
+        $botao = $_POST["responder"];
 
+ //relacionado a alternativa selicionada 
 if(isset($_POST["alt"])){
-    $res= validar($_POST["alt"], $resp[$nq], $_POST["ponto"]);
-    $nq = $_POST["nq"]+1;
+    $res= validar($_POST["alt"], $resp[$nq], $_POST["ponto"]); //chamando a funcao validar
+    $respondido= true; //quando o usuario responder e clicar no botao respoondido ira receber true
     }$msg= " ".$res;
         }
-       
+
+        
+     $_SESSION['ponto'] = $ponto; //é preciso armazenar os pontos no session p mandar p pag final
+
+     //funcao importantissima!!! ela exibe as questoes, pontos, etc (MUITO CUIDADO COM ELA)
 function questoes($i){
-    global $perguntas, $alt, $_SESSION, $nq, $ponto, $msg;
+    global $perguntas, $alt, $_SESSION, $nq, $ponto, $msg, $respondido;
     if( $nq>9){
-        $i=0;
-        $nq=0;
+        $i=9;
+        $nq=9;
     }
 ?>
-    
-    <div class="bg">
-        <form class="parent" action="unipag.php" method="post">
-    <?php echo $msg?>
+<div class="parent">
+    <section  id="1">
+    <form action="unipag.php" method="post">
+    <p style="background-color: pink;"><?php echo $msg?></p>
+        <label for="pontos">Total de pontos:  </label><input   type="text" name="ponto" value="<?php echo $ponto; ?>" readonly >
+        <div class="alternatives">
+        <div class="radio-input">
+        <h1><?php echo ($perguntas[$i])?></h1>
+        <label for="pontos">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>" readonly >
+        <br>
+        <input type="radio" name="alt" class="input" id="a1" value="1" ><?php echo($alt[$i][0])?></br>
+        <input type="radio" name="alt" class="input" id="a2" value="2" ><?php echo($alt[$i][1])?></br>
+        <input type="radio" name="alt" class="input" id="a3" value="3" ><?php echo($alt[$i][2])?></br>
+        <input type="radio" name="alt" class="input" id="a4" value="4" ><?php echo($alt[$i][3])?></br>
+       
 
-            <div class="questionbody">
-                <p><?php echo ($perguntas[$i])?></p>     
-            </div>
-            <div class="alternatives"> 
-            <div class="radio-input">
-                 <label for="a1">
-                    <input type="radio" class="input" name="alt" value="1" required><?php echo($alt[$i][0])?> <br>
-                </label>
-                 <label for="a2">
-                    <input type="radio" class="input" name="alt" value="2" required><?php echo($alt[$i][1])?><br>
-                 </label>
-                 <label for="a3">
-                    <input type="radio" class="input" name="alt" value="3" required><?php echo($alt[$i][2])?><br>
-                </label>
-                <label for="a4"> 
-                    <input type="radio" class="input" name="alt" value="4" required><?php echo($alt[$i][3])?><br>
-                </label>
-                    <input type="submit" name= "calcular" value="calcular"class="goaheadbutton"><button class="learn-more">Continuar</button>
-            </div>
-            </div>
-            <label for="pontos">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>" onlyread>
-            <label for="pontos">Total de pontos:  </label><input type="text" name="ponto" value="<?php echo $ponto; ?>" onlyread>
-        </form>
-    </div>
-<div class="goaheadbutton"><button class="learn-more">Continuar</button>
- </div>
-    <?php if($i==9){ 
-       echo '<a href="final.php"><button>Finalizar</button></a>';?>
+    <!--basicamente, enquanto o usuario n responder, o bo tao vai ter funcao de botao de resposta. Quando o botao de resposta for clicado, ele vira um botao p passar a pergunta-->
+   <?php if(!$respondido){
+        echo '<input id= "responder" type="submit" name= "responder" value="responder">'; } ?>
+
+
+    <?php if($respondido){
+       echo '<input id= "proximo" type="submit" name= "proximo" value="proximo">';}
+   
+        ?>
+    </form>
+
+</div>
+</div>
+
+<!--quando o usuario responde a ultima quetao, vai exirtir um botao para finalizar o quiz (esse botao leva para a pag final)-->
+    <?php if($i==9){
+ if($respondido){
+       echo '<a href="final.php"><button>Finalizar</button></a>';}
+   
+        ?>
+
+
+</section>
 </div>
 <?php
 }}
+//a funcao termina aq
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
-    <script src="Script.js"></script> 
+   <!-- <link rel="stylesheet" href="stylesheet.css">
+    <script src="Script.js"></script> -->
     <title>Steven Universo Quiz</title>
+   
+    <title>Document</title>
 </head>
 <body>
 <div id="page-container">
@@ -147,20 +174,37 @@ function questoes($i){
   </div>
 <div id="page">
 
+
 <header>
 <div class="parent">
-
+  <div class="title">
+      <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
+    </div>
 </header>
 <div id="content-wrap">
 <main>
+<!--exibindo nome do jogador e chamando a função de exibição-->
+<?php echo "Jogador: " .$_SESSION['nome']; ?>
+<?php questoes($nq)?>
+</div>
 </main>
+</div>
+
+
+
+
+
+
+
 
 <footer id="footer">
 
-<div class="ftgrid"> 
+
+<div class="ftgrid">
+
 
  <div class="groupcontent">
-  Desenvolvedoras: 
+  Desenvolvedoras:
     <div class="Name1">      Emilly Beatriz Andrade Brito </div>
     <div class="Name2"> Francilene F. de Oliveira </div>
     <div class="Name3"> Letícia Matias Rosendo  </div>
@@ -170,16 +214,10 @@ function questoes($i){
     <div class="Info2"> Professor: Éberton Marinho </div>
     <div class="Info3"> Unidade 1 </div>
  </div>
-</div></footer>
-
-
-<?php questoes($nq)?>
-
-
-
-
-
+</div>
+</footer>
 
 
 </body>
 </html>
+
