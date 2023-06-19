@@ -1,4 +1,41 @@
-<?php
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="stylesheet.css">
+    <script src="Script.js"></script>
+    
+    <title>Steven Universo Quiz</title>
+</head>
+<body>
+<div id="page">
+
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+          <span class="dot"></span>
+          <div class="dots">
+              <span></span>
+              <span></span>
+              <span></span>
+ </div>
+  </div>
+</div>
+
+<div class="parent">
+<header>
+
+  <div class="title">
+      <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
+  </div>
+</div>
+</header>
+
+<main>
+
+    <?php
 session_start();
 
 
@@ -104,21 +141,22 @@ function questoes($i){
         $nq=9;
     }
 ?>
-<div class="parent">
-    <section  id="1">
-    <form action="unipag.php" method="post">
-    <p style="background-color: pink;"><?php echo $msg?></p>
-        <label for="pontos">Total de pontos:  </label><input   type="text" name="ponto" value="<?php echo $ponto; ?>" readonly >
+<div class="grid2">
+    <section  id="1" class="bg">
+    <form action="unipag.php" method="post" class="bg">
+    <p><?php echo $msg?></p>
+        
+        <div class="questionbody"><?php echo ($perguntas[$i])?></div>
         <div class="alternatives">
         <div class="radio-input">
-        <h1><?php echo ($perguntas[$i])?></h1>
-        <label for="pontos">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>" readonly >
+<label for="pontos" class="totalp">Total de pontos:  </label><input   type="text" name="ponto" value="<?php echo $ponto; ?>" readonly >
+        <label for="pontos" class="perga">Pergunta atual:<input type="text" name="nq" value="<?php echo $nq; ?>" readonly >
         <br>
         <input type="radio" name="alt" class="input" id="a1" value="1" ><?php echo($alt[$i][0])?></br>
         <input type="radio" name="alt" class="input" id="a2" value="2" ><?php echo($alt[$i][1])?></br>
         <input type="radio" name="alt" class="input" id="a3" value="3" ><?php echo($alt[$i][2])?></br>
         <input type="radio" name="alt" class="input" id="a4" value="4" ><?php echo($alt[$i][3])?></br>
-       
+
 
     <!--basicamente, enquanto o usuario n responder, o bo tao vai ter funcao de botao de resposta. Quando o botao de resposta for clicado, ele vira um botao p passar a pergunta-->
    <?php if(!$respondido){
@@ -148,47 +186,12 @@ function questoes($i){
 }}
 //a funcao termina aq
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <!-- <link rel="stylesheet" href="stylesheet.css">
-    <script src="Script.js"></script> -->
-    <title>Steven Universo Quiz</title>
-   
-    <title>Document</title>
-</head>
-<body>
-<div id="page-container">
-    <div id="js-preloader" class="js-preloader">
-      <div class="preloader-inner">
-          <span class="dot"></span>
-          <div class="dots">
-              <span></span>
-              <span></span>
-              <span></span>
- </div>
-      </div>
-  </div>
-<div id="page">
-
-
-<header>
-<div class="parent">
-  <div class="title">
-      <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
-    </div>
-</header>
-<div id="content-wrap">
-<main>
 <!--exibindo nome do jogador e chamando a função de exibição-->
 <?php echo "Jogador: " .$_SESSION['nome']; ?>
 <?php questoes($nq)?>
-</div>
+
 </main>
-</div>
+
 
 
 
@@ -199,12 +202,10 @@ function questoes($i){
 
 <footer id="footer">
 
-
-<div class="ftgrid">
-
+<div class="ftgrid"> 
 
  <div class="groupcontent">
-  Desenvolvedoras:
+  Desenvolvedoras: 
     <div class="Name1">      Emilly Beatriz Andrade Brito </div>
     <div class="Name2"> Francilene F. de Oliveira </div>
     <div class="Name3"> Letícia Matias Rosendo  </div>
@@ -216,8 +217,8 @@ function questoes($i){
  </div>
 </div>
 </footer>
-
-
+</div>
+</div>
 </body>
 </html>
 

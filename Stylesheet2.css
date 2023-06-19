@@ -1,0 +1,309 @@
+
+@import 'https://fonts.googleapis.com/css2?family=Fredoka:wght@500&display=swap';  
+body{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('https://i.pinimg.com/originals/a6/36/1d/a6361d7827f4ef58ae749ec0940adf91.png');
+}
+
+p{
+  font-family: 'Fredoka', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 25px;
+  color: #2c2f33;
+  text-align: center;
+  position: relative;
+}
+
+h1{
+ font-family: 'Fredoka', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 45px;
+  color: #2c2f33;
+  text-align: center;
+  position: relative;
+}
+
+h2{
+ font-family: 'Fredoka', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 35px;
+  color: #2c2f33;
+  text-align: center;
+  position: relative;
+}
+
+.parent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 20px;
+width: 100vw;
+height: 300px;
+}
+
+.grid2{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-row5s: repeat(5, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+  background-color: #ee8e8b;
+  border-radius: 10px;
+}
+
+
+header { 
+  grid-area: 1 / 1 / 2 / 4;  
+  border-radius: 20px;
+  height: 300px;
+}
+
+main { 
+  grid-area: 2 / 1 / 3 / 4;
+  border-radius: 20px;
+  height: 250px;
+}
+
+footer { 
+  position: fixed;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;    
+  background-color: #E7625F;
+  grid-area: 3 / 1 / 4 / 4;
+  border-radius: 5px;
+  padding: 10px;
+
+}
+
+.container1 { 
+  background-color: #E9EAE0;
+  border-radius: 20px;
+  grid-area: 1 / 1 / 2 / 3; 
+}
+.container2 { 
+  background-color: #E9EAE0;
+  border-radius: 20px;
+  grid-area: 2 / 1 / 3 / 2; 
+}
+.container3 { 
+  background-color: #E9EAE0;
+  border-radius: 20px;
+  grid-area: 2 / 2 / 3 / 3; 
+}
+.container4 { 
+  background-color: #E9EAE0;
+  border-radius: 20px;
+  grid-area: 3 / 1 / 4 / 3; 
+}
+.container5 { 
+  background-color: #E9EAE0;
+  border-radius: 20px;
+  grid-area: 4 / 1 / 5 / 3; 
+}
+.container6 { 
+  background-color: #E9EAE0;
+  border-radius: 20px;
+  grid-area: 5 / 1 / 6 / 3; 
+}
+
+
+.ftgrid { /*Grid do rodapé*/
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 10px;
+}
+
+.infocontent{ /*Informações sobre o projeto*/
+  grid-area: 1 / 2 / 5 / 3;
+  font-family: 'Fredoka', sans-serif;
+  letter-spacing: 2px;
+  align-content: left;
+  font-size: 15px;
+  text-align: left;
+  padding: 25px;
+  color: #E9EAE0;
+}
+
+.Info1{
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.Info2{
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.Info3{
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.groupcontent{ /*Informações sobre a equipe*/
+  grid-area: 1 / 1 / 5 / 2;
+  font-family: 'Fredoka', sans-serif;
+  letter-spacing: 2px;
+  align-content: left;
+  font-size: 20px;
+  text-align: left;
+  padding: 25px;
+  color: #E9EAE0;
+}
+
+/*Organização dos integrantes em grid*/
+.Name1 {
+  grid-area: 2 / 1 / 3 / 2;
+  font-size: 15px;
+}
+
+.Name2{
+  grid-area: 3 / 1 / 4 / 2;
+  font-size: 15px;
+}
+
+.Name3 {
+  grid-area: 4 / 1 / 5 / 2;
+  font-size: 15px;
+}
+
+#openPopUp{
+  grid-area: 1 / 1 / 2 / 2;
+  text-align:center;
+  height: 20px;
+  weight: 20px ;
+  background-color: #E7625F;
+  padding: 15px 15px;
+  color: #ffffff;
+  border-radius: 3.5px;
+  text-decoration: none;
+  transition:background-color 0.15s linear;
+  -webkit-transition:background-color 0.15s linear;
+  -moz-transition:background-color 0.25s linear;
+  -o-transition:background-color 0.25s linear;
+}
+
+a#openPopUp:hover{
+  cursor: pointer;
+  background-color: #ee8e8b;
+}
+.popup{
+  position: fixed;
+  top: -100vh;
+  left: 0;
+  z-index: 9999999;
+  background: rgba(0,0,0, 0.75);
+  width: 100vw;
+  height: 100%;
+  opacity: 0;
+
+    -webkit-transition: opacity  0.35s ease;
+    -moz-transition: opacity 0.35s ease;
+    -o-transition: opacity 0.35s ease;
+    transition: opacity 0.35s ease;
+}
+.popup .popUpContainer{
+  width: 100%;
+  max-width: 500px;
+  border-radius: 20px;
+  position: fixed; /* To avoid scroll to target */
+  left: 50%;
+  top: -100vh;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+
+  /* Trick to properly center the element by using negative 
+  1/2 length of element as margin left and top */
+  margin-left: -250px;
+  background-color: pink;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  border-radius: 2px;
+  z-index: 9999999; 
+}
+.popup h2{
+  text-align: center;
+  height: 35px;
+  font-family: 'Fredoka', sans-serif;
+  letter-spacing: 2px;
+  font-size: 25px;
+  color: #444444;
+  margin: 0;
+}
+.popup img{
+  width: 100%;
+  display: block;
+}
+.popup article{
+  background-color: #E7625F;
+  font-family: 'Fredoka', sans-serif;
+  letter-spacing: 2px;
+  font-size: 15px;
+  padding: 20px;
+  color: #E9EAE0;
+}
+/* The cancel button on popup dialog */
+.popup a.closePopUp{
+  font-family: verdana;
+  color: #e74c3c;
+  position: absolute;
+  top: 0.2em;
+  right: 0.375em;
+  margin: 0;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+/* The cancel button on popup dialog */
+.popup a:hover{
+  color: #c0392b;
+}
+/* When popup is targeted, by clicking on link with #popup in HTML */
+.popup:target{
+  opacity: 1;
+  top: 0;
+}
+.popup .closePopUpOutSide{
+  position: absolute;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999991; 
+}
+.popup:target .popUpContainer{
+  top: 50px;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+}
+
+@media  (max-width: 796px) {
+  .popup .popUpContainer{
+    width: 90%;
+    max-width: none;
+    left: 5%;
+    margin-left: 0;
+  }
+  .popup ul{
+    padding: 0 1em 0 1em;
+  }
+  .popup:target .popUpContainer{
+    top: 25px;
+    -webkit-transition: top  0.35s ease;
+    -moz-transition: top 0.35s ease;
+    -o-transition: top 0.35s ease;
+    transition: top 0.35s ease;
+  }
+}
+

@@ -13,33 +13,49 @@ $gemgif='';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet2.css">
+    <script src="Script.js"> </script>
+    <title>Resultados</title>
 </head>
 <body>
 
+
+<div class="parent">
+    <header>
+
+  <div class="title">
+      <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
+  </div>
+</div>
+</header>
+    <main>
+    <div class="grid2">
 <!--esse session é para exibir o nome do jogador -->
-    <h1>Parabéns, <?php  echo $_SESSION['nome'] ?> !!! </h1>
-    <h2>Você finalizou o quiz com um total de <?php echo $quant_acerto ?> de 10 acertos.</h2>
-
-<h4>Seu total de biscoitos, aproveite:</h4>
+    <div class="container1"> <h1>Parabéns, <?php  echo $_SESSION['nome'] ?> !!! </h1>
+    <h1>Você finalizou o quiz com um total de <?php echo $quant_acerto ?> de 10 acertos.</h1></div>
+    <div class="container2">
+<p>Seu total de biscoitos, aproveite:
 <?php echo $_SESSION['ponto']; 
-?>
-<br>
-<h4>Porcentagem de acertos</h4>
-<?php echo $por_acerto."%"; ?>
-
-<h2>Agora seus biscoitos gatinhos servirão para descobrir os poderes de qual  gem você terá.
-  
-</h2>
+?> </p> </div>
+<div class="container3">
+<p>Porcentagem de acertos <?php echo $por_acerto."%"; ?> </p></div>
+<div class="container4">
+<h2>Agora seus biscoitos gatinhos servirão para descobrir os poderes de qual a sua gem!
+  </h2>
+  <div align="center">
+  <a href="#popUp" id="openPopUp">Qual a minha Gem?</a> 
+</div>
 <!--p saber qual gem o usuario recebe-rá-->
+<aside id="popUp" class="popup">
+    <div class="popUpContainer">
+        <a href="#!" class="closePopUp">X</a>
+        <h1>
 <?php 
-
-
 
 
 if($quant_acerto==1){
@@ -89,14 +105,36 @@ if($quant_acerto==10){
 }
 
 ?>
+</h2>
 <?Php echo $gem; ?>
-<br>
-<br>
 <?Php echo $gemgif; ?>
-
+</article>
+   </div>        
+   <a href="#!" class="closePopUpOutSide"></a>    
+</aside>
+</div>
 <br>
 <br>
 <a href="home.php"><button>JOGAR NOVAMENTE</button></a>
+</main>
+<footer id="footer">
+
+<div class="ftgrid"> 
+
+ <div class="groupcontent">
+  Desenvolvedoras: 
+    <div class="Name1">      Emilly Beatriz Andrade Brito </div>
+    <div class="Name2"> Francilene F. de Oliveira </div>
+    <div class="Name3"> Letícia Matias Rosendo  </div>
+ </div>
+ <div class="infocontent">
+  <div class="Info1"> Trabalho para a disciplina de Programação para a internet </div>
+    <div class="Info2"> Professor: Éberton Marinho </div>
+    <div class="Info3"> Unidade 1 </div>
+ </div>
+</div>
+</footer>
+</div>
 </body>
 
 </html>

@@ -38,9 +38,9 @@ $nome="";
       </div>
   </div>
 <div id="page">
-
-<header>
 <div class="parent">
+<header>
+
   <div class="title">
       <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
   </div>
@@ -51,20 +51,25 @@ $nome="";
   <div class="box">
     <div class="boxgrid">
       <div class="textbox">
-         <div class="form-group">
+        <div class="form-group">
         <form class="colorful-form" action="unipag.php" method="post">
             <label class="form-label" for="name">Nome:</label>
-                
-            <!--  <?php 
+                <input required="" placeholder="Escolha seu melhor apelido!" class="form-input" type="text" name="nome">
+                 <button class="form-button" type="submit"><a href="unipag.php">começar</button></a>
+                <!--
+              <?php 
         //logica dos botoes dnv
+  
                 if(!$confirmacao){
                   echo '<input placeholder="Escolha seu melhor apelido!"  class="form-input" type="text" name="nome">';
                   echo ' <button class="form-button" type="submit" name="confirmar">Confirmar</button>'; } ?>
 
+
                 <?php if($confirmacao){
                   echo '<input placeholder="Seu nome foi registrado" class="form-input" type="text" name="nome" disabled>';
                   echo '<button class="form-button" name="proximo"><a href="unipag.php">começar</button></a>';}
-              ?> -->
+              ?>
+ -->
               </form>
           </div>
       </div>
@@ -122,3 +127,4 @@ $nome="";
 </div>
 </div>
    </body>
+</html>
