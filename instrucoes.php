@@ -17,3 +17,7 @@
     <a href="home.php"><button>Voltar</button></a>
 </body>
 </html>
+
+<script> 
+        setInterval(function(){location.reload(true);}, 10000);
+    </script>
