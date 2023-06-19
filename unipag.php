@@ -167,6 +167,10 @@ function questoes($i){
        echo '<input id= "proximo" type="submit" name= "proximo" value="proximo">';}
    
         ?>
+ <?php if($i==9){
+ if($respondido){
+       echo '<a href="final.php"><button>Finalizar</button></a>';}
+        ?>
     </form>
 </section>
 </div>
@@ -174,11 +178,6 @@ function questoes($i){
 </div>
 
 <!--quando o usuario responde a ultima quetao, vai exirtir um botao para finalizar o quiz (esse botao leva para a pag final)-->
-    <?php if($i==9){
- if($respondido){
-       echo '<a href="final.php"><button>Finalizar</button></a>';}
-        ?>
-
 
 
 </div>

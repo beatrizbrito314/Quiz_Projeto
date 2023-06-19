@@ -48,13 +48,8 @@ $gemgif='';
 <h2>Agora seus biscoitos gatinhos servirão para descobrir os poderes de qual a sua gem!
   </h2>
   <div align="center">
-  <a href="#popUp" id="openPopUp">Qual a minha Gem?</a> 
-</div>
-<!--p saber qual gem o usuario recebe-rá-->
-<aside id="popUp" class="popup">
-    <div class="popUpContainer">
-        <a href="#!" class="closePopUp">X</a>
-        <h1>
+Qual a minha Gem?
+<br>
 <?php 
 
 
@@ -107,12 +102,8 @@ if($quant_acerto==10){
 ?>
 </h2>
 <?Php echo $gem; ?>
+<br>
 <?Php echo $gemgif; ?>
-</article>
-   </div>        
-   <a href="#!" class="closePopUpOutSide"></a>    
-</aside>
-</div>
 <br>
 <br>
 <a href="home.php"><button>JOGAR NOVAMENTE</button></a>
