@@ -16,6 +16,7 @@
 
 <body>
 <div id="page">
+    <div class="parent">
 
     <div id="js-preloader" class="js-preloader">
       <div class="preloader-inner">
@@ -29,7 +30,7 @@
 </div>
 
 <div class="parent">
-<header>
+<header id="pageHead">
 
   <div class="title">
       <img  src="https://vignette2.wikia.nocookie.net/steven-universe/images/e/e0/Steven_Universe_logo.png/revision/latest?cb=20131006122342" width="600px"/>
@@ -37,7 +38,7 @@
 </div>
 </header>
 
-<main>
+<main id="pageMain">
 
     <?php
 session_start();
@@ -146,7 +147,6 @@ function questoes($i){
     }
 ?>
 <div class="grid2">
-    <div class="bg2"></div>
     <section  id="1">
     <form action="unipag.php" method="post" class="bg" class="bg">
     <p><?php echo $msg?></p>
@@ -197,15 +197,7 @@ function questoes($i){
 </main>
 
 
-
-
-
-
-
-
-<div id="page">
-
-<footer id="footer">
+<footer id="pageFoot">
 
 <div class="ftgrid"> 
 
@@ -220,6 +212,7 @@ function questoes($i){
     <div class="Info2"> Professor: Éberton Marinho </div>
     <div class="Info3"> Unidade 1 </div>
  </div>
+</div>
 </div>
 </footer>
 </div>
